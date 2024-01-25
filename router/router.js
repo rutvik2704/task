@@ -52,8 +52,6 @@ router.post("/login", async (req, res) => {
 
 /********************* only Authenticated user can post router. *********************/ 
 // http://localhost:9000/postData
-
-
 router.post("/PostData",passport.authenticate('jwt',{session:false}),async (req, res) => {
     try {
         const user =   req.user
